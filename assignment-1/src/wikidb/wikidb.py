@@ -19,10 +19,10 @@ def gen_rand_data(datarange,database,fname='test.db'):
 		e = {}
 		name = str(id_generator())+ ' ' +str(id_generator())
 		year = random.randrange(1990,2014)
-		category = random.choice(['Peace','Physics','Chemistry','Literature','Economics'])
+		category = random.choice(['peace','physics','chemistry','literature','economics'])
 		achievement = str(id_generator()).strip()
 		gender = random.choice(['m','f'])
-		country = random.choice(['India','Germany','France','USA','England','China','Russia','Switzerland','Australia','Spain'])
+		country = random.choice(['india','germany','france','usa','england','china','russia','switzerland','australia','spain'])
 		e['name'] = name.strip()
 		e['year'] = year
 		e['category'] = category.strip()
@@ -254,7 +254,7 @@ class Database:
 							for k in p.keys():
 								if j[0] == k:
 									break
-							if j[1] != p.get(j[0],None).lower():
+							if j[1] != p.get(j[0],None):
 								tresult.append(p)
 					else:
 						j = j.split('=')
@@ -262,7 +262,7 @@ class Database:
 							for k in p.keys():
 								if j[0] == k:
 									break
-							if j[1] == p.get(j[0],None).lower():
+							if j[1] == p.get(j[0],None):
 								tresult.append(p)
 
 				else:
@@ -279,20 +279,20 @@ class Database:
 										abool = self.parseyear(ae,n)
 									elif ae.find('!=') != -1 :
 										al = ae.split('!=')
-										abool = (al[1] != n.get(al[0],None).lower())
+										abool = (al[1] != n.get(al[0],None))
 									else:
 										al = ae.split('=')							
-										abool = (al[1] == n.get(al[0],None).lower())
+										abool = (al[1] == n.get(al[0],None))
 
 									if be.find('year') != -1:
 											bbool = self.parseyear(be,n)
 
 									elif be.find('!=') != -1 :
 										bl = be.split('!=')
-										bbool = (bl[1] != n.get(bl[0],None).lower())
+										bbool = (bl[1] != n.get(bl[0],None)
 									else:
 										bl = be.split('=')
-										bbool = (bl[1] == n.get(bl[0],None).lower())
+										bbool = (bl[1] == n.get(bl[0],None))
 
 									if abool and bbool:
 										cnt -= 1 
