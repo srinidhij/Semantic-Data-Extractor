@@ -94,7 +94,7 @@ class Database:
 	   			print 'IOError occured'
 	   			return
 			datastr = dbfile.read()
-			datastr.strip('\n')
+			datastr = datastr.strip('\n').lower()
 			maindb = datastr.split(';');
 			for i in range(0,len(maindb)):
 				maindb[i] =  maindb[i].split(',')
@@ -289,7 +289,7 @@ class Database:
 
 									elif be.find('!=') != -1 :
 										bl = be.split('!=')
-										bbool = (bl[1] != n.get(bl[0],None)
+										bbool = (bl[1] != n.get(bl[0],None))
 									else:
 										bl = be.split('=')
 										bbool = (bl[1] == n.get(bl[0],None))
