@@ -75,6 +75,6 @@ module wikidb.interactive
 
 ######Fuctions
 FUNCTIONS
-    interactive_menu()
-        interactive menu generator for running 
-        wikidb module
+        interactive_menu()
+            interactive menu generator for running 
+             wikidb module
