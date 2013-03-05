@@ -1,7 +1,7 @@
-Assignment 1 
+#Assignment 1 
 =============
 
-######Usage
+####Usage
           usage: wikidb.py [-h] [-i --insert] [-u --update] [-d --delete]
                  [-f --filename] [-g --generate] [-s --select] [--interactive]
 
@@ -16,7 +16,7 @@ Assignment 1
             --interactive  Run in interactive mode
             
 
-######Create:
+#####Create:
            Read from existing db file and create 
            the database.Also create database using 
            random entries.If the file you specify already exists 
@@ -25,7 +25,7 @@ Assignment 1
            option is not used then the database will be created using 
            the entries present in the file
 
-######Select:
+#####Select:
            Select entries from the database.
            Syntax : <fields to be selected> where 
            condition(1) and/or condition(2) and/or 
@@ -35,18 +35,18 @@ Assignment 1
            Here "and" has higher precedence than "or"
            Eg :   'all where country=india and category!=physics or year>2005'
            
-######Insert:
+#####Insert:
            Insert a record into the database
            Syntax : field(1)=value(1),field(2)=value(2)...field(n)=value(n);
            Eg : 'name=pqr lmn,category=physics,year=2013,achievement=asdfasdf,country=india'
   
-######Update:
+#####Update:
            Update an entry in the database
            Syntax : <field(s) to be updated> where condition(1) 
            and/or condition(2) and/or condition(3) ... condition(n)
            Eg : 'name=abcd efgh,category=economics where name=pqr lmn'
         
-######Delete:
+#####Delete:
            Delete an entry from the database
            Syntax : where condition(1) and/or condition(2) and/or 
            condition(3)... condition(n)
