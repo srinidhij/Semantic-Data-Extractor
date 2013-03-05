@@ -1,7 +1,7 @@
 #Assignment 1 
 
 
-####Usage
+###Usage
           usage: wikidb.py [-h] [-i --insert] [-u --update] [-d --delete]
                  [-f --filename] [-g --generate] [-s --select] [--interactive]
 
