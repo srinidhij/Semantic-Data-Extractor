@@ -1,9 +1,10 @@
 Package wikidb
 ==============
-Module wikidb.wikidb
-=====================
 
-######CLASSES
+##Module wikidb.wikidb
+
+
+#####CLASSES
     Database
     
     class Database
@@ -57,7 +58,7 @@ Module wikidb.wikidb
      |      Syntax : <field(s) to be updated> where condition(1) 
      |      and/or condition(2) and/or condition(3) ... condition(n)
 
-######FUNCTIONS
+#####FUNCTIONS
     gen_rand_data(datarange, database, fname='test.db')
         Generates random entries for the database
     
@@ -70,10 +71,9 @@ Module wikidb.wikidb
         on it
 
 
-module wikidb.interactive
-==========================
+##module wikidb.interactive
 
-######Fuctions
+#####Fuctions
 
         interactive_menu()
         interactive menu generator for running 
