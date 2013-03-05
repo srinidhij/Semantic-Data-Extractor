@@ -1,5 +1,5 @@
 #Assignment 1 
-=============
+
 
 ####Usage
           usage: wikidb.py [-h] [-i --insert] [-u --update] [-d --delete]
