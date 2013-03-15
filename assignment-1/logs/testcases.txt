@@ -1,0 +1,274 @@
+srinidhi@ubuntu:~/python-assign/final/assignment-1/src/wikidb$ python wikidb.py --interactive
+Welcome to Database Server
+###########################################################################
+ Choose an option : 
+ 1. Create database 
+ 2. Select entries from database 
+ 3. Insert an entry into the database 
+ 4. Update an entry in the database 
+ 5. Delete an entry in the database 
+ 6. Exit 
+###########################################################################
+1
+If the file you specify already exists the new entries will be
+ appended to the file and original entries will be unchanged
+ Enter the file name : 
+wikidb> ../../sample.db
+ Do you want to generate random entries (Y/n) :
+wikidb> n
+Creating database from entries already present in file ../../sample.db
+ Database Created in 0.0 s
+###########################################################################
+ Choose an option : 
+ 1. Create database 
+ 2. Select entries from database 
+ 3. Insert an entry into the database 
+ 4. Update an entry in the database 
+ 5. Delete an entry in the database 
+ 6. Exit 
+###########################################################################
+2
+Syntax : <fields to be selected> where 
+        condition(1) and/or condition(2) and/or 
+        condition(3) ... condition(n).
+        Here "and" has higher precedence than "or" 
+ Enter select query : 
+wikidb>all where year>=2010
+========================================================================================================================
+  category               name             gender               year            country         achievement         
+========================================================================================================================
+       Peace      sesxj szcxg                f             2012           France             ownr     
+       Peace        tdqf uxwi                m             2011      Switzerland            asyjy     
+  Literature       pdynn nbmg                m             2012            India             oybu     
+   Economics      ruqat bgvhk                f             2012        Australia             nizx     
+   Economics       paibi fetl                f             2012      Switzerland             otur     
+     Physics       shhvx yacs                m             2011              USA            hibkk     
+     Physics      jwhoe bkbkg                f             2011           Russia            gnguc     
+   Chemistry        glfr mthn                m             2012              USA             ecdy     
+========================================================================================================================
+Fetched 8 entry(ies)
+in 0.000355 s 
+###########################################################################
+ Choose an option : 
+ 1. Create database 
+ 2. Select entries from database 
+ 3. Insert an entry into the database 
+ 4. Update an entry in the database 
+ 5. Delete an entry in the database 
+ 6. Exit 
+###########################################################################
+2
+Syntax : <fields to be selected> where 
+        condition(1) and/or condition(2) and/or 
+        condition(3) ... condition(n).
+        Here "and" has higher precedence than "or" 
+ Enter select query : 
+wikidb>all where gender=f or year<-2005 and category=physics
+========================================================================================================================
+  category               name             gender               year            country         achievement         
+========================================================================================================================
+     Physics       vpvng qvvk                f             1996            China             vkmp     
+   Economics       rvmm mofaf                f             1998            India            hcgla     
+       Peace      tygkw judrn                f             2005      Switzerland            begsr     
+       Peace       fejon bkwt                f             2001              USA            aoltc     
+       Peace      sesxj szcxg                f             2012           France             ownr     
+   Economics       kzdhp jghb                f             2003           Russia            sabjl     
+   Economics      ruqat bgvhk                f             2012        Australia             nizx     
+   Economics       sepma slpp                f             2002           Russia            mlfgc     
+  Literature       exqnl rxvu                f             1990           Russia             wkrm     
+     Physics      qnjkb hqsbo                f             2000              USA             bolt     
+   Economics      rlwba gkhhz                f             2000           Russia             vrzz     
+     Physics        nnps ogbk                f             2007              USA            gnyaa     
+   Economics       wkhga qtke                f             2004              USA             fwiu     
+   Chemistry        rhbi yhqr                f             1993           Russia            paqhp     
+       Peace      lokgq uavxo                f             2002           Russia            wivop     
+     Physics       texl vmqez                f             1996              USA            rbbcd     
+       Peace      mmqqn dlggw                f             1990          England            fnpph     
+     Physics       qajd xujmt                f             2001            India            rzrvs     
+     Physics      oftdy jveux                f             2007        Australia             whpq     
+       Peace       xlws ctjbs                f             2000            China             nulo     
+     Physics      tihqg polet                f             2000            India             bjgy     
+   Economics       paibi fetl                f             2012      Switzerland             otur     
+   Chemistry      hkxpi jiahf                f             1991            Spain            cfdzp     
+     Physics       azxww thsj                f             2001      Switzerland            cgvlz     
+  Literature      vglvd ughgq                f             1990           France            nfhfp     
+  Literature       fyqq wbknq                f             1990              USA            megaw     
+  Literature        nchu knlc                f             2007           Russia             ddnq     
+     Physics      jwhoe bkbkg                f             2011           Russia            gnguc     
+     Physics      mgzvi hzjmt                f             1997            China             lxqv     
+     Physics       gbzpp jkwb                f             1990        Australia            tziau     
+     Physics       mtrp behgr                f             1998      Switzerland            jahfn     
+       Peace      rgglq fkxgm                f             1995            Spain             fith     
+   Economics       knqke wyzh                f             2007            India            ncjlw     
+  Literature        jqqy krky                f             2004      Switzerland            kdywr     
+  Literature       sniw hkahg                f             1993              USA             mwzy     
+       Peace      fidkw fjetk                f             2003      Switzerland            gjfpr     
+     Physics       negfy supk                f             1993              USA            clziz     
+   Economics       yrrfb tvhp                f             1998           Russia            xvuif     
+   Chemistry       seblw bgbx                f             1996           France            cyywh     
+   Chemistry      tfiuy nylvz                f             1994           Russia            xrkip     
+     Physics        ghuo rhxj                f             2002      Switzerland            tqnkk     
+========================================================================================================================
+Fetched 41 entry(ies)
+in 0.001833 s 
+###########################################################################
+ Choose an option : 
+ 1. Create database 
+ 2. Select entries from database 
+ 3. Insert an entry into the database 
+ 4. Update an entry in the database 
+ 5. Delete an entry in the database 
+ 6. Exit 
+###########################################################################
+3 
+ Enter record to be inserted:
+wikidb>name=pqr lmn,year=2012,category=chemistry,achievement=xgfghr,country=india
+wikidb> Inserted  name=pqr lmn,year=2012,category=chemistry,achievement=xgfghr,country=india  Successfully in 0.000164 s
+###########################################################################
+ Choose an option : 
+ 1. Create database 
+ 2. Select entries from database 
+ 3. Insert an entry into the database 
+ 4. Update an entry in the database 
+ 5. Delete an entry in the database 
+ 6. Exit 
+###########################################################################
+6
+Bye
+
+
+1 . Creation of database : 
+
+srinidhi@ubuntu:~/python-assign/final/assignment-1/src/wikidb$ python wikidb.py -f ../../sample.db -g 100
+Generated 100 random records
+Time taken for creation 2.0 s 
+
+Here -f option is used to select file and -g option is used to create random entries for the database.
+
+2. Select 
+a)
+srinidhi@ubuntu:~/python-assign/final/assignment-1/src/wikidb$ python wikidb.py -f ../../sample.db -s 'all where year=2012'
+Time taken for creation 0.0 s 
+========================================================================================================================
+  category               name             gender               year            country         achievement         
+========================================================================================================================
+   Economics        fyoj drud                m             2012           Russia             gppc     
+  Literature        ywos dsho                m             2012           Russia            zzfgl     
+  Literature        wbpc gyec                f             2012          Germany             clff     
+========================================================================================================================
+Fetched 3 entry(ies)
+Time taken for select 0.000 s 
+Time taken for print 0.000 s
+
+Here the records present in the file sample.db are read and the database is created and then the select query is executed.
+
+b)
+srinidhi@ubuntu:~/python-assign/final/assignment-1/src/wikidb$ python wikidb.py -f ../../sample.db -s 'all where gender=f and year=2011'
+Time taken for creation 0.0 s 
+========================================================================================================================
+  category               name             gender               year            country         achievement         
+========================================================================================================================
+  Literature      wzuin eczxk                f             2011          Germany             yoep     
+  Literature       gkhd kbzfz                f             2011          Germany             jozz     
+========================================================================================================================
+Fetched 2 entry(ies)
+Time taken for select 0.000 s 
+Time taken for print 0.000 s
+c)
+srinidhi@ubuntu:~/python-assign/final/assignment-1/src/wikidb$ python wikidb.py -f ../../sample.db -s 'name,category,gender where gender=f and year=2011 or category=physics'
+Time taken for creation 0.0 s 
+========================================================================================================================
+  category             gender               name         
+========================================================================================================================
+  Literature                f      wzuin eczxk     
+  Literature                f       gkhd kbzfz     
+     Physics                m       kgco mydxk     
+     Physics                f      vhljd pgntz     
+     Physics                f      wvrze hicmp     
+     Physics                f       mahri cled     
+     Physics                m       xxhwg ppqv     
+     Physics                m       yauu pxxdw     
+     Physics                m       msfs adilg     
+     Physics                f       nbze lblmb     
+     Physics                f       dsde whwrb     
+     Physics                m       spvjl kqig     
+     Physics                m      wtqco lwyzk     
+     Physics                m       lcmu zsbzc     
+     Physics                f       gvqy ommhw     
+     Physics                m       pykv irlgr     
+     Physics                f        pkne mvpz     
+     Physics                f      nfrew vpfrr     
+     Physics                f        drbi mloq     
+     Physics                m      blklf plccy     
+     Physics                m        vvpl jbyx     
+     Physics                m        mfxw iika     
+     Physics                m      dxvfr rrtuq     
+     Physics                m        annw rqjn     
+     Physics                f      gfzia ehmnp     
+     Physics                f       nxcsq emdd     
+========================================================================================================================
+Fetched 26 entry(ies)
+Time taken for select 0.001 s 
+Time taken for print 0.000 s
+
+3) Insert : 
+srinidhi@ubuntu:~/python-assign/final/assignment-1/src/wikidb$ python wikidb.py -f ../../sample.db -i 'name=abc def,year=2012,category=chemistry,achievement=asdfasdf,gender=m'
+Time taken for creation 0.0 s 
+Time taken for insert 0.000
+
+srinidhi@ubuntu:~/python-assign/final/assignment-1/src/wikidb$ python wikidb.py -f ../../sample.db -s 'all where name=abc def'
+Time taken for creation 0.0 s 
+========================================================================================================================
+  category             gender               name         achievement               year         
+========================================================================================================================
+   chemistry                m          abc def         asdfasdf             2012     
+========================================================================================================================
+Fetched 1 entry(ies)
+Time taken for select 9.1e- s 
+Time taken for print 8.3e- s
+
+
+4) Update :
+
+srinidhi@ubuntu:~/python-assign/final/assignment-1/src/wikidb$ python wikidb.py -f ../../sample.db -u 'name=pqr lmn; where name=abc def'
+Time taken for creation 0.0 s 
+Time taken for update 0.000
+
+srinidhi@ubuntu:~/python-assign/final/assignment-1/src/wikidb$ python wikidb.py -f ../../sample.db -s 'all where name=pqr lmn'Time taken for creation 0.0 s 
+========================================================================================================================
+  category               name            country               year             gender         achievement         
+========================================================================================================================
+   chemistry          pqr lmn            india             2012                m         asdfasdf     
+========================================================================================================================
+Fetched 1 entry(ies)
+Time taken for select 9.2e- s 
+Time taken for print 8.8e- s
+
+5) Delete : 
+srinidhi@ubuntu:~/python-assign/final/assignment-1/src/wikidb$ python wikidb.py -f ../../sample.db -s 'all where name=pqr lmn'
+Time taken for creation 0.0 s 
+========================================================================================================================
+  category               name             gender               year            country         achievement         
+========================================================================================================================
+   chemistry          pqr lmn                m             2012            india         asdfasdf     
+========================================================================================================================
+Fetched 1 entry(ies)
+Time taken for select 9.3e- s 
+Time taken for print 8.7e- s
+
+srinidhi@ubuntu:~/python-assign/final/assignment-1/src/wikidb$ python wikidb.py -f ../../sample.db -d 'where name=pqr lmn'Time taken for creation 0.0 s 
+Deleted 
+========================================================================================================================
+  category               name             gender               year            country         achievement         
+========================================================================================================================
+   chemistry          pqr lmn                m             2012            india         asdfasdf     
+========================================================================================================================
+Time taken for delete 0.000
+
+srinidhi@ubuntu:~/python-assign/final/assignment-1/src/wikidb$ python wikidb.py -f ../../sample.db -s 'all where name=pqr lmn'
+Time taken for creation 0.0 s 
+NULL
+Time taken for select  0 s 
+Time taken for print  0 s
+
+5) Interactive : 
