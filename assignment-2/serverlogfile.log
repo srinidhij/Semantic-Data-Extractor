@@ -1,0 +1,14 @@
+Fri Mar 15 23:27:35 2013 : Server started on host localhost port 12345
+Fri Mar 15 23:27:39 2013 : Accepted connection from ('127.0.0.1', 55797)
+Fri Mar 15 23:27:43 2013 :  Serving ('127.0.0.1', 55797) as guest
+Fri Mar 15 23:27:48 2013 : Recievd password from ('127.0.0.1', 55797)(working in admin mode)
+Fri Mar 15 23:27:48 2013 : Authentication Successful ('127.0.0.1', 55797) now granted admin access
+Fri Mar 15 23:29:02 2013 : Server started on host localhost port 12345
+Fri Mar 15 23:29:03 2013 : Accepted connection from ('127.0.0.1', 55798)
+Fri Mar 15 23:29:04 2013 :  Serving ('127.0.0.1', 55798) as guest
+Fri Mar 15 23:29:08 2013 :  Serving ('127.0.0.1', 55798) as guest
+Fri Mar 15 23:30:36 2013 : Server started on host localhost port 12345
+Fri Mar 15 23:30:38 2013 : Accepted connection from ('127.0.0.1', 55800)
+Fri Mar 15 23:30:40 2013 :  Serving ('127.0.0.1', 55800) as guest
+Fri Mar 15 23:30:46 2013 : Query all received from ('127.0.0.1', 55800)
+Fri Mar 15 23:30:51 2013 :  Serving ('127.0.0.1', 55800) as guest
