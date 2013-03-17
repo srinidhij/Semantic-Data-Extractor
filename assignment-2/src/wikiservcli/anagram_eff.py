@@ -5,6 +5,8 @@ from collections import defaultdict
 s = raw_input("Enter the base string : ")
 x = raw_input("Enter the test input : ")
 def isAnagram(s,x):
+    '''Checks if two string are anagrams 
+	of each other efficiently'''
     if len(s) != len(x):
         return False
     s = ''.join(findall('[a-z]+',s.lower()))

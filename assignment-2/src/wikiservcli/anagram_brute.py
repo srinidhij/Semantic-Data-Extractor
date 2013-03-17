@@ -3,6 +3,8 @@ from re import findall
 s = raw_input("Enter the base string : ")
 x = raw_input("Enter the test input : ")
 def isAnagram(s,x):
+	'''Checks if two strings are anagrams of 
+	each other via brute force method'''
 	if len(x) != len(s):
 	return False
 	s = ''.join(findall('[a-z]+',s.lower()))
