@@ -36,6 +36,6 @@ FUNCTIONS
         Parse command line args and 
         check them for correctness
 
-DATA
+    DATA
     AF_INET = 2
     SOCK_STREAM = 1
