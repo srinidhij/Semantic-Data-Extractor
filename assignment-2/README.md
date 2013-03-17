@@ -3,7 +3,7 @@
 ###Server client-model for wiki-poeple database
 
 ###Usage :
-  ####Server
+####Server
       usage: servf.py [-h] [-s host] [-p port]
 
     optional arguments :
@@ -11,7 +11,7 @@
     mandatory arguments :
       -s host     host name on which server runs
       -p port     port on which server runs
-   ####Client
+####Client
     usage: tcpclient.py [-h] [-c host] [-p port]
 
     optional arguments:
