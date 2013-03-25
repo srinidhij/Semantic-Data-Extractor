@@ -39,10 +39,9 @@ def guestMode(connSocket,addr):
 def adminMode(connSocket,addr):
     '''interactive menu generator for running 
     wikidb module '''
-
+    db = None
     global log
     c = 'y'
-    db = Database()
     try:
         while c=='y':
             printData = ''
@@ -86,9 +85,8 @@ def adminMode(connSocket,addr):
                 connSocket.send(printData)
             elif int(ch) == 2:
                 if db is None:
-                    printData = ' Please create database first\n'
-                    connSocket.send(printData)
-                    continue
+                    db = Database()
+                    db.create()
                 printData = '''Syntax : <fields to be selected> where 
     condition(1) and/or condition(2) and/or 
     condition(3) ... condition(n).
@@ -105,9 +103,8 @@ def adminMode(connSocket,addr):
                 connSocket.send(printData)
             elif int(ch) == 3:
                 if db is None:
-                    printData = 'Please create database first\n'
-                    connSocket.send(printData)
-                    continue
+                    db = Database()
+                    db.create()
                 printData = 'Enter record to be inserted: \n'
                 connSocket.send(printData)
                 query = connSocket.recv(4096)
@@ -116,9 +113,8 @@ def adminMode(connSocket,addr):
                     connSocket.send(printData)
             elif int(ch) == 4:
                 if db is None:
-                    printData = 'Please create database first\n'
-                    connSocket.send(printData)
-                    continue
+                    db = Database()
+                    db.create()
                 printData = '''Update an entry in the database
     Syntax : <field(s) to be updated> where condition(1) 
     and/or condition(2) and/or condition(3) ... condition(n)'''
@@ -131,9 +127,8 @@ def adminMode(connSocket,addr):
                 connSocket.send(printData)
             elif int(ch) == 5:
                 if db is None:
-                    printData = ' Please create database first\n'
-                    connSocket.send(printData)
-                    continue
+                    db = Database()
+                    db.create()
                 printData = '''Delete an entry from the database
     Syntax : where condition(1) and/or condition(2) and/or 
     condition(3)... condition(n)'''
@@ -150,17 +145,13 @@ def adminMode(connSocket,addr):
                 c = 'n'
                 return
     except error,message:
+        print str(error)+' '+str(message)
         if message != '[Error 32 Broken Pipe]':
             printData = 'Wrong Syntax\n'
             connSocket.send(printData)
         else:
             log.write(time.now(),' Client '+str(addr)+' exited abruptly')
         sys.exit(1)
-    except:
-        printdat =  'Wrong syntax\n'
-        childSocket.send(printdat)
-        sys.exit(1)
-
 
 def handle_child(childSocket, childAddr):
     '''Thread to handle tcp requests'''
@@ -270,7 +261,7 @@ optional arguments:
         serverSocket.listen(5)
     except:
         print 'Error : Unable to create socket(This is probabaly because a previous socket created on this \
-            port was not closed properly)'
+port was not closed properly)'
         sys.exit(1)
     log = logger.Logger('serverlogfile.log')
     log.write(time.now(),'Server started on host '+args.s+' port '+args.p)
