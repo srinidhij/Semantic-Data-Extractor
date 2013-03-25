@@ -279,12 +279,13 @@ optional arguments:
         try:
             connSocket, clientAddr = serverSocket.accept()
             log.write(time.now(),'Accepted connection from '+str(clientAddr))
-            t = Thread(target=handle_child,
-                        args=(connSocket, clientAddr))
+            t = Thread(target=handle_child,args=(connSocket, clientAddr))
+            t.daemon = True
             t.start()
         except KeyboardInterrupt :
             log.write(time.now(),'Server stopped')
             print 'Server stopped'
+            exit(0)
 
 log = None
 if __name__=="__main__":
