@@ -1,0 +1,34 @@
+<html>
+<head>
+	<style type="text/css">
+	body{
+		background-color: #eeeeee;
+	}
+	input.button{
+		margin-left: 135px;
+		padding-top: 3px;
+		padding-bottom: 3px; 
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+	</style>
+<title>
+	Wiki people database
+	</title>
+</head>
+<body>
+	<h1>Wiki people database</h1>
+<h2>Enter your query</h2>
+<form action="serve.py" method="post">
+	<table>
+	<tr><td>Name</td><td><input type="text" name="name"></td><td><input type="checkbox" name="cname">Select Name<br/></td></tr>
+	<tr><td>Year</td><td><input type="text" name="year"></td><td><input type="checkbox" name="cyear">Select Year<br/></td></tr>
+	<tr><td>Category</td><td><input type="text" name="category"></td><td><input type="checkbox" name="ccat">Select Category<br/></td></tr>
+	<tr><td>Achievement</td><td><input type="text" name="achievement"><td><input type="checkbox" name="cachie">Select Achievement<br/></td></td></tr>
+	<tr><td>Country</td><td><input type="text" name="country"></td><td><input type="checkbox" name="ccounrty">Select Country<br/></td></tr>
+	<tr><td>Query</td><td><input type="textarea" name="query"></td></tr>
+</table>
+	<input class="button" type="submit" value="Find">
+</form>
+</body>
+</html>
