@@ -47,6 +47,15 @@ class HTMLParser:
 						else:
 							achstr += str(temp)
 					t['achievement'] = achstr
+					if category.lower() == 'literature':
+						achstr += ' work : '
+						ach = tdele[5].contents
+						for temp in ach:
+							if str(type(temp)) == "<class 'BeautifulSoup.Tag'>" and str(type(temp.contents[0])) != "<class 'BeautifulSoup.Tag'>":
+								achstr += temp.contents[0]
+							else:
+								achstr += str(temp)
+					t['achievement'] = achstr
 					t['category'] = category
 					data.append(t)
 					
@@ -72,6 +81,14 @@ class HTMLParser:
 									achstr += temp.contents[0]
 								else:
 									achstr += str(temp)
+							if category.lower() == 'literature':
+								achstr += ' work : '
+								ach = tdele[4].contents
+								for temp in ach:
+									if str(type(temp)) == "<class 'BeautifulSoup.Tag'>" and str(type(temp.contents[0])) != "<class 'BeautifulSoup.Tag'>":
+										achstr += temp.contents[0]
+									else:
+										achstr += str(temp)
 							t['achievement'] = achstr
 						except :
 							t['achievement'] = achstr
@@ -95,6 +112,15 @@ class HTMLParser:
 							achstr += temp.contents[0]
 						else:
 							achstr += str(temp)
+					t['achievement'] = achstr
+					if category.lower() == 'literature':
+						achstr += ' work : '
+						ach = tdele[5].contents
+						for temp in ach:
+							if str(type(temp)) == "<class 'BeautifulSoup.Tag'>" and str(type(temp.contents[0])) != "<class 'BeautifulSoup.Tag'>":
+								achstr += temp.contents[0]
+							else:
+								achstr += str(temp)
 					t['achievement'] = achstr
 					t['category'] = category
 					data.append(t)
