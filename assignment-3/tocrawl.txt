@@ -1,6 +1,0 @@
-http://en.wikipedia.org/wiki/List_of_Nobel_laureates_in_Physics::physics
-http://en.wikipedia.org/wiki/List_of_Nobel_laureates_in_Chemistry::chemistry
-http://en.wikipedia.org/wiki/List_of_Nobel_laureates_in_Physiology_or_Medicine::medicine
-http://en.wikipedia.org/wiki/List_of_Nobel_laureates_in_Literature::literature
-http://en.wikipedia.org/wiki/List_of_Nobel_Peace_Prize_laureates::peace
-http://en.wikipedia.org/wiki/List_of_Nobel_laureates_in_Economics::economics
