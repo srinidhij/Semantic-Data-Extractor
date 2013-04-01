@@ -54,7 +54,7 @@ class ThreadedHTTPServer(ThreadingMixIn, HTTPServer):
     pass
 
 def genrespdata(useragent):
-	respstr = '<html><head><title>Responsive Server</title></head><body><h1>Details of your device</h1><table border="1">'
+	respstr = '<html><head><title>Responsive Server</title></head><body bgcolor="#eeeeee"><h1>Details of your device</h1><table border="1">'
 	
 	os = sdk.getOS(useragent)
 	touch = sdk.isTouch(useragent)
