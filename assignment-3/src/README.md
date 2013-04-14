@@ -3,7 +3,7 @@
 ##NAME
     wikihttpserver.wikihttp
 
-    ###CLASSES
+###CLASSES
         BaseHTTPServer.BaseHTTPRequestHandler(SocketServer.StreamRequestHandler)
             WikiServer
         ThreadingMixIn
@@ -304,11 +304,11 @@
          |  
          |  __init__(self, request, client_address, server)
 
-    ###FUNCTIONS
+###FUNCTIONS
         main()
         Runs the module by initializing a server.
 
-    ###DATA
+###DATA
         curdir = '.'
         port = 8888
         sep = '/'
@@ -316,7 +316,7 @@
 ##NAME
     wikihttpserver.crawler
 
-    ###CLASSES
+###CLASSES
         Crawler
         
         class Crawler
@@ -334,7 +334,7 @@
 ##NAME
     wikihttpserver.parsehtml
 
-    ######CLASSES
+###CLASSES
         HTMLParser
         
         class HTMLParser
@@ -362,14 +362,14 @@
          |      Remove unwanted data present in the html 
          |      like citations and references
 
-    ###FUNCTIONS
+###FUNCTIONS
         main()
             Simulate working of the HTMLParser
 
 ##NAME
     wikihttpserver.colldata
 
-    ###CLASSES
+###CLASSES
         BuildDB
         
         class BuildDB
@@ -384,13 +384,13 @@
          |      Gets the data from the crawler and uses 
          |      parser to parse the data and returns the data
 
-    ###FUNCTIONS
+###FUNCTIONS
         getData()
             return data got from the parser
 ##NAME
     wikihttpserver.transfer
 
-    ###CLASSES
+###CLASSES
         CreateDB
         
         class CreateDB
@@ -403,10 +403,10 @@
          |      Create a mongo client and get the data from parser
          |      and insert the data into the database
 
-    ###FUNCTIONS
+###FUNCTIONS
         main()
 
-    ###DATA
+###DATA
         ALL = 2
         ASCENDING = 1
         DESCENDING = -1
@@ -424,7 +424,7 @@
     wikihttpserver.mongoDB
 
 
-    ###CLASSES
+###CLASSES
         QueryDB
         
         class QueryDB
@@ -437,7 +437,7 @@
          |      executes the query and converts the result into 
          |      html for passing onto the client
 
-    ###FUNCTIONS
+###FUNCTIONS
         errorMongoDB(e)
             handle execption(s) occurred during processing 
             of the query
@@ -448,7 +448,7 @@
             Return the current time in seconds since the Epoch.
             Fractions of a second may be present if the system clock provides them.
 
-    ###DATA
+###DATA
         ALL = 2
         ASCENDING = 1
         DESCENDING = -1
