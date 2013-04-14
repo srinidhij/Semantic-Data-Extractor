@@ -1,3 +1,14 @@
+#Usage 
+
+First build the database:
+
+    $python transfer.py
+
+Start the server
+
+    $python wikihttp.py 8888
+
+
 #Module wikihttpserver
 
 ##NAME
@@ -127,7 +138,7 @@
          |      Verify the request.  May be overridden.
          |      
          |      Return True if we should proceed with this request.
-              |  
+         |  
          |  ----------------------------------------------------------------------
          |  Data and other attributes inherited from SocketServer.BaseServer:
          |  
