@@ -95,7 +95,7 @@ Start the server
          |  
          |  address_family = 2
          |  
-              |  request_queue_size = 5
+         |  request_queue_size = 5
          |  
          |  socket_type = 1
          |  
