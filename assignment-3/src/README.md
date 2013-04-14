@@ -11,8 +11,8 @@ Start the server
 
 #Module wikihttpserver
 
-##NAME
-    wikihttpserver.wikihttp
+##Name
+###wikihttpserver.wikihttp
 
 ###CLASSES
         BaseHTTPServer.BaseHTTPRequestHandler(SocketServer.StreamRequestHandler)
@@ -324,8 +324,8 @@ Start the server
         port = 8888
         sep = '/'
 
-##NAME
-    wikihttpserver.crawler
+##Name
+###wikihttpserver.crawler
 
 ###CLASSES
         Crawler
@@ -377,8 +377,8 @@ Start the server
         main()
             Simulate working of the HTMLParser
 
-##NAME
-    wikihttpserver.colldata
+##Name
+###wikihttpserver.colldata
 
 ###CLASSES
         BuildDB
@@ -398,8 +398,8 @@ Start the server
 ###FUNCTIONS
         getData()
             return data got from the parser
-##NAME
-    wikihttpserver.transfer
+##Name
+###wikihttpserver.transfer
 
 ###CLASSES
         CreateDB
@@ -431,8 +431,8 @@ Start the server
         version_tuple = (2, 5)
 
 
-##NAME
-    wikihttpserver.mongoDB
+##Name
+###wikihttpserver.mongoDB
 
 
 ###CLASSES
