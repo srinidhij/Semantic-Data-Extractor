@@ -51,7 +51,7 @@ Start the server
          |  server_bind(self)
          |      Override server_bind to store the server name.
          |  
-              |      Override server_bind to store the server name.
+         |      Override server_bind to store the server name.
          |  
          |  ----------------------------------------------------------------------
          |  Data and other attributes inherited from BaseHTTPServer.HTTPServer:
