@@ -2,6 +2,16 @@
 import time,cgi,string,threading
 from BaseHTTPServer import BaseHTTPRequestHandler, HTTPServer
 import sdk
+import sys
+
+if len(sys.argv) == 2:
+	try:
+		port = int(sys.argv[1])
+	except : 
+		print 'Error : port number has to be an integer'
+		sys.exit(1)
+else :
+	port = 8888
 
 class ResponsiveServer(BaseHTTPRequestHandler):
 
@@ -16,8 +26,11 @@ class ResponsiveServer(BaseHTTPRequestHandler):
 			s = genrespdata(self.headers['user-agent'])
 			print s
 			self.wfile.write(s)
-		except error,msg:
-			print 'Error : '+str(msg)+' occured'
+		except Exception as e:
+			errmsg = 'An error occured while processing your request : <br/>'
+			errmsg +=  'Error : '+str(e)+' occured'
+			print errmsg
+			self.wfile.write(errmsg)
 		return			
 
 
@@ -83,7 +96,7 @@ def genrespdata(useragent):
 
 def main():
 	try:
-		server = ThreadedHTTPServer(('localhost', 8888), ResponsiveServer)
+		server = ThreadedHTTPServer(('localhost', port), ResponsiveServer)
 		print 'started server ...'
 		server.serve_forever()
 	except KeyboardInterrupt:

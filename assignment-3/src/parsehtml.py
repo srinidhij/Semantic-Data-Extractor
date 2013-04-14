@@ -2,13 +2,22 @@
 from BeautifulSoup import BeautifulSoup
 
 class HTMLParser:
+	''' Class for parsing html from 
+	wikipedia '''
+	
 	def __init__(self,html=None):
+		''' Initialize the HTMLParser by creating a
+		BeautifulSoup object and Initialize the 
+		table which contains the data to be 
+		parsed '''
 		self.html = html.replace('\xc3','o')
 		self.soup = BeautifulSoup(html)
 		self.table = self.soup.findAll('table')[1]	
 		self.p = self.table.findAll('tr')
 
 	def performcleanup(self,data):
+		''' Remove unwanted data present in the html 
+		like citations and references'''
 		for i in range(0,len(data)):
 			if type(data[i]['country']) == list:
 				data[i]['country'] = data[i]['country'][0]
@@ -18,6 +27,8 @@ class HTMLParser:
 				data[i]['achievement'] = data[i]['achievement'][:pos]
 		return data
 	def convert(self,data):
+		''' Convert the non-ascii strings into
+		ascii by removing non-ascii characters'''
 		for i in range(len(data)):
 			for key in data[i].keys():
 				a = data[i][key]
@@ -33,6 +44,9 @@ class HTMLParser:
 		return data
 
 	def parse(self,category):
+		''' Parse the actual table by pulling out 
+		the data from rows abd columns.Stores the 
+		collected data in a list of dictionaries'''
 		j = 0
 		data = []
 		p = self.p
@@ -148,6 +162,7 @@ class HTMLParser:
 
 
 def main():
+	''' Simulate working of the HTMLParser'''
 	i = 0
 	parser = HTMLParser(''.join(open('sample.html').readlines()))
 	data = parser.parse('physics')

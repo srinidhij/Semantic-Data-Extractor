@@ -4,11 +4,18 @@ import datetime
 import sys
 
 def errorMongoDB(e):
+    '''handle execption(s) occurred during processing 
+    of the query'''
     data = "<html><title>WikiPeopleDatabase</title><body>"+"The following exception occurred while connecting to the database : "+str(e)+"</body></html>"
     return data
 
 class QueryDB:
     def processQuery(self,form):
+        ''' Parse the query recieved from the html
+        and process it. This converts the query entered by 
+        the user in html to corressponding mongoDB queries, 
+        executes the query and converts the result into 
+        html for passing onto the client'''
         try:
             client = MongoClient('localhost',27017)
             db = client.WikiPeopleDatabase

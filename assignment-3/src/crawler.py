@@ -2,12 +2,15 @@ import urllib2
 import sys
 
 class Crawler:
+        ''' Class for crawling and screen-scraping from 
+        the list of sites specified in a file '''
         
         def __init__(self,ipfile='tocrawl.txt',opfile='output'):
                 self.ipfile = ipfile
                 self.opfile = opfile
         
         def main(self):
+                '''Main method to crawl data from the sites specified'''
                 treadli = open(self.ipfile).read().split("\n")[:-1]
                 readli = []
                 for tsite in treadli:
