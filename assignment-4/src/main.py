@@ -8,6 +8,8 @@ def main():
 
     nmdb = ParseHtml().main()
     name = raw_input('Enter name : \n')
+    #print nmdb
+    print 'Created databasre of nobel prize winners with %s entries'%str(len(nmdb))
     print 'Searching for %s ...'%name
     pdata = None
     for tn in nmdb:
@@ -22,7 +24,7 @@ def main():
     datal = ParseLp(pdata['link']).parse()
     data = '.'.join(datal)
     nex = NEExtract(data)
-    print data
+    #print data
     nex.main()
 if __name__ == '__main__':
     main()

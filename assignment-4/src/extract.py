@@ -4,6 +4,8 @@ from nltk import pos_tag
 from nltk import ne_chunk
 from nltk import Tree
 
+waste = ['physics','chemistry','physiology','literature','wikipedia']
+
 class NEExtract:
     def __init__(self,data):
         self.text = data
@@ -25,13 +27,22 @@ class NEExtract:
         except :
             pass
 
-        print '#'*70+'\nNamed entities\n'+'#'*70
+        neli = []    
         for j in nmli:
+            temp = dict()
             j = j.strip('()')
             nl = j.split()
             k = 1
             ntype = nl[0]
             nname = ' '.join(nl[1:])
             if ntype == 'PERSON' or ntype == 'GPE':
+                temp['type'] = ntype
+                temp['name'] = nname
+                if temp not in neli and nname.lower() not in waste:
+                    neli.append(temp)
 
-                print ntype+',    '+nname
+        print '#'*70+'\nNamed Entites\n'+'#'*70            
+        for j in neli:
+            ntype = j['type']
+            nname = j['name']            
+            print ntype+',    '+nname
