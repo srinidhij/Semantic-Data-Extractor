@@ -8,7 +8,7 @@ def main():
 
     nmdb = ParseHtml().main()
     name = raw_input('Enter name : \n')
-    print name
+    print 'Searching for %s ...'%name
     pdata = None
     for tn in nmdb:
         #print tn['name']
@@ -16,8 +16,9 @@ def main():
             pdata = tn
             break
     if pdata == None:
-        print 'Not found'
+        print 'Name %s Not found'%name
         sys.exit(1)
+    print 'Fetching data about %s'%name
     datal = ParseLp(pdata['link']).parse()
     data = '.'.join(datal)
     nex = NEExtract(data)

@@ -32,4 +32,6 @@ class NEExtract:
             k = 1
             ntype = nl[0]
             nname = ' '.join(nl[1:])
-            print ntype+',    '+nname
+            if ntype == 'PERSON' || ntype == 'GPE':
+
+                print ntype+',    '+nname
