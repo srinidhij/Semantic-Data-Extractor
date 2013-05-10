@@ -25,6 +25,6 @@ def main():
     data = '.'.join(datal)
     nex = NEExtract(data)
     #print data
-    nex.main()
+    print nex.main()
 if __name__ == '__main__':
     main()
