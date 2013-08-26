@@ -4,18 +4,11 @@ import datetime
 import sys
 
 def errorMongoDB(e):
-    '''handle execption(s) occurred during processing 
-    of the query'''
     data = "<html><title>WikiPeopleDatabase</title><body>"+"The following exception occurred while connecting to the database : "+str(e)+"</body></html>"
     return data
 
 class QueryDB:
     def processQuery(self,form):
-        ''' Parse the query recieved from the html
-        and process it. This converts the query entered by 
-        the user in html to corressponding mongoDB queries, 
-        executes the query and converts the result into 
-        html for passing onto the client'''
         try:
             client = MongoClient('localhost',27017)
             db = client.WikiPeopleDatabase
@@ -56,7 +49,25 @@ background-color:#5858FA;
 }
 </style>
             '''
-        printData = '<html><title>WikiPeopleDatabase</title>'+styles+'<body><h1 align="center">Query Results</h1><table align="center" border=1 id="wikipeople"><tr>'
+	style2 = '<link rel="stylesheet" href="foundation.css">'
+        printData = '<html><head><title>WikiPeopleDatabase</title>'+style2
+        printData+='''
+        <script type="text/javascript">
+        function post_to_url(buttonId) {
+            var form = document.createElement("form");
+            form.setAttribute("method", "post");
+            form.setAttribute("action", "http://localhost:8008/servf.py");
+            var nobel = document.getElementById(buttonId).value;
+            var hiddenField = document.createElement("input");
+            hiddenField.setAttribute("type", "hidden");
+            hiddenField.setAttribute("name", "query");
+            hiddenField.setAttribute("value", nobel);
+            form.appendChild(hiddenField);
+            document.body.appendChild(form);
+            form.submit();
+        }
+</script></head><body><h1 align="center">Query Results</h1><div class="row"><div class="twelve-columns-centered"><table align="center" border=1 id="wikipeople"><tbody><tr>
+        '''
         try:
             if temp['displaycategory']=='on':
                 printData+='<th>Category</th>'
@@ -181,7 +192,7 @@ background-color:#5858FA;
                     if key==attr:
                         fQuery.append({key:{'$nin':val}})
                 #print 'fQuery ',fQuery
-        fname = "../logs/log"+str(datetime.date.today())+".txt"
+        fname = "../../logs/log"+str(datetime.date.today())+".txt"
         f = open(fname,"a")
         print 'Final Query: ',fQuery
         f.write('Query Executed '+str(fQuery)+'\n')
@@ -197,10 +208,13 @@ background-color:#5858FA;
                 temp = wikipeople.find({ '$or': fQuery},toBeDisplayed)
                 t2 = time() - t1
                 count =  wikipeople.find({ '$or': fQuery}).count()
-        except:
+        except Exception as e:
+	    f = open()
             return errorMongoDB("Invalid Query")
+        buttonId = 0
         for result_object in temp:
             #print result_object
+            buttonId+=1
             printData+= '<tr>'
             r = dict(result_object)
             #print r
@@ -211,7 +225,7 @@ background-color:#5858FA;
                     printData+= '<td>'+'Empty'+'</td>'
             if name==True:
                 try:
-                    printData+= '<td>'+r['name']+'</td>'
+                    printData+= '<td><input class="but" type="button" id="'+str(buttonId)+'" name="query" onclick="post_to_url(this.id)" value="'+r['name']+'" style="border-style:none;background-color:#eeeeee;" /></td>'
                 except:
                     printData+= '<td>'+'Empty'+'</td>'
             if year==True:
@@ -231,6 +245,6 @@ background-color:#5858FA;
                     printData+= '<td>'+'Empty'+'</td>'
 
             printData+=  '</tr>'
-        printData+= '</table></br><h3 align="center">'+str(count)+" results fetched out of "+str(wikipeople.count())+" entries in "+str(t2)+" seconds"+'</h3>'
+        printData+= '</tbody></table></div></div></br><h3 align="center">'+str(count)+" results fetched out of "+str(wikipeople.count())+" entries in "+str(t2)+" seconds"+'</h3>'
         printData+= '</body></html>'
         return printData

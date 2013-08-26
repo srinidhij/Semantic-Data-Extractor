@@ -61,13 +61,16 @@ class ThreadingMixIn:
 
         """
         try:
-            fname = "../logs/log"+str(datetime.date.today())+".txt"
+            fname = "../../logs/log"+str(datetime.date.today())+".txt"
             f = open(fname,"a")
             self.finish_request(request, client_address)
             f.write(str(self.server_address)+'\n')
             self.shutdown_request(request)
             f.close()
-        except:
+        except Exception as e:
+            fname = "../../logs/log"+str(datetime.date.today())+".txt"
+            f = open(fname,"a")
+            f.write('Error occured'+str(e))
             self.handle_error(request, client_address)
             self.shutdown_request(request)
 
